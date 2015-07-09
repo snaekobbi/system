@@ -1,0 +1,25 @@
+---
+- apt:
+    pkg: openjdk-7-jre
+    state: installed
+- file:
+    path: /tmp/debs
+    state: directory
+- copy:
+    src: "{{ item }}"
+    dest: /tmp/debs/
+  with_items:
+    - debs/org/daisy/pipeline/assembly/1.9.1/assembly-1.9.1-all.deb
+    - debs/org/daisy/pipeline/assembly/1.9.1/assembly-1.9.1-webui_all.deb
+    - debs/org/daisy/pipeline/modules/braille/mod-celia/1.0.0/mod-celia-1.0.0-all.deb
+    - debs/org/daisy/pipeline/modules/braille/mod-dedicon/1.0.0/mod-dedicon-1.0.0-all.deb
+    - debs/org/daisy/pipeline/modules/braille/mod-mtm/1.0.0/mod-mtm-1.0.0-all.deb
+    - debs/org/daisy/pipeline/modules/braille/mod-nlb/1.0.0/mod-nlb-1.0.0-all.deb
+    - debs/org/daisy/pipeline/modules/braille/mod-nota/1.0.0/mod-nota-1.0.0-all.deb
+- shell: dpkg -i /tmp/debs/*.deb
+- service:
+    name: "{{ item }}"
+    state: started
+  with_items:
+    - pipeline2d
+    - pipeline2-webuid

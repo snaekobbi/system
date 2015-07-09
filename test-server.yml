@@ -1,0 +1,7 @@
+---
+- hosts: vagrant-test-server
+  sudo: true
+  pre_tasks:
+    - apt: update_cache=yes
+  roles:
+    - test-server
