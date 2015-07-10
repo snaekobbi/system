@@ -13,7 +13,7 @@ all : vagrant_ssh_config $(DEBS)
 
 $(DEBS) :
 	mkdir -p $(dir $@)
-	wget -O - "$(subst roles/test-server/files/debs/,https://oss.sonatype.org/content/groups/staging/,$@)" > $@
+	wget -O - "$(subst roles/test-server/files/debs/,http://repo1.maven.org/maven2/,$@)" > $@
 
 vagrant_ssh_config :
 	vagrant ssh-config > $@
