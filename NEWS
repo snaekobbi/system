@@ -1,6 +1,6 @@
 Braille in DP2 v1.0.0
 =====================
-This first release provides a basic working system consisting of the DP2 server and web UI, plus agency-specific modules for MTM, NLB, Nota, Celia and Dedicon. All 4.3 related work that has been done so far has been included.
+This first release provides a basic working system consisting of the DP2 server and web UI, plus agency-specific modules for MTM, SBS, NLB, Nota, Celia and Dedicon. All 4.3 related work that has been done so far has been included.
 
 Requirements covered
 --------------------
@@ -19,3 +19,4 @@ Components
 - pipeline-mod-mtm [1.0.0](https://github.com/snaekobbi/pipeline-mod-mtm/releases/tag/v1.0.0)
 - pipeline-mod-nlb [1.0.0](https://github.com/snaekobbi/pipeline-mod-nlb/releases/tag/v1.0.0)
 - pipeline-mod-nota [1.0.0](https://github.com/snaekobbi/pipeline-mod-nota/releases/tag/v1.0.0)
+- pipeline-mod-sbs [1.0.0](https://github.com/snaekobbi/pipeline-mod-sbs/releases/tag/v1.0.0)

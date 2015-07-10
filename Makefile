@@ -5,6 +5,7 @@ DEBS := $(addprefix roles/test-server/files/debs/,org/daisy/pipeline/assembly/1.
                                                   org/daisy/pipeline/modules/braille/mod-mtm/1.0.0/mod-mtm-1.0.0-all.deb \
                                                   org/daisy/pipeline/modules/braille/mod-nlb/1.0.0/mod-nlb-1.0.0-all.deb \
                                                   org/daisy/pipeline/modules/braille/mod-nota/1.0.0/mod-nota-1.0.0-all.deb \
+                                                  org/daisy/pipeline/modules/braille/mod-sbs/1.0.0/mod-sbs-1.0.0-all.deb \
                                                   )
 
 .PHONY : all vagrant_ssh_config clean

@@ -16,6 +16,7 @@
     - debs/org/daisy/pipeline/modules/braille/mod-mtm/1.0.0/mod-mtm-1.0.0-all.deb
     - debs/org/daisy/pipeline/modules/braille/mod-nlb/1.0.0/mod-nlb-1.0.0-all.deb
     - debs/org/daisy/pipeline/modules/braille/mod-nota/1.0.0/mod-nota-1.0.0-all.deb
+    - debs/org/daisy/pipeline/modules/braille/mod-sbs/1.0.0/mod-sbs-1.0.0-all.deb
 - shell: dpkg -i /tmp/debs/*.deb
 - service:
     name: "{{ item }}"
