@@ -8,16 +8,19 @@ DEBS := $(addprefix roles/test-server/files/debs/,org/daisy/pipeline/assembly/1.
                                                   org/daisy/pipeline/modules/braille/mod-sbs/1.0.0/mod-sbs-1.0.0-all.deb \
                                                   )
 
-.PHONY : all vagrant_ssh_config clean
+.PHONY : all ssh_config clean
 
-all : vagrant_ssh_config $(DEBS)
+all : ssh_config $(DEBS)
+
+production : $(DEBS)
+	echo "Host production" > ssh_config
 
 $(DEBS) :
 	mkdir -p $(dir $@)
 	wget -O - "$(subst roles/test-server/files/debs/,http://repo1.maven.org/maven2/,$@)" > $@
 
-vagrant_ssh_config :
+ssh_config :
 	vagrant ssh-config > $@
 
 clean :
-	rm -rf $(DEBS) vagrant_ssh_config
+	rm -rf $(DEBS) ssh_config

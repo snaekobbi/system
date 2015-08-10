@@ -1,0 +1,7 @@
+---
+- hosts: production
+  sudo: false
+  pre_tasks:
+    - apt: update_cache=yes
+  roles:
+    - test-server
