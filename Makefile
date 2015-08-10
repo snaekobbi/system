@@ -12,15 +12,17 @@ DEBS := $(addprefix roles/test-server/files/debs/,org/daisy/pipeline/assembly/1.
 
 all : ssh_config $(DEBS)
 
-production : $(DEBS)
-	echo "Host production" > ssh_config
-
 $(DEBS) :
 	mkdir -p $(dir $@)
 	wget -O - "$(subst roles/test-server/files/debs/,http://repo1.maven.org/maven2/,$@)" > $@
 
 ssh_config :
-	vagrant ssh-config > $@
+	rm -f $@
+	if which vagrant >/dev/null \
+		&& vagrant status --machine-readable | grep "vagrant-test-server,state,running" >/dev/null; \
+	then vagrant ssh-config > $@; \
+	else touch $@; \
+	fi
 
 clean :
 	rm -rf $(DEBS) ssh_config
