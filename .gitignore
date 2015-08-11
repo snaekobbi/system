@@ -1,4 +1,5 @@
 /vagrant_ssh_config
+/ssh_config
 .DS_Store
 /.vagrant/
 /roles/test-server/files/debs/org/daisy/pipeline/assembly/1.9.1/assembly-1.9.1-all.deb
