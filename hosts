@@ -1,5 +1,9 @@
+[test-servers]
+vagrant-test-server
+local
+
 [test]
 vagrant-test-server
 
-[local]
-local ansible_connection=local
+[production]
+local
