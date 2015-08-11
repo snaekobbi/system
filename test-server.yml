@@ -1,5 +1,5 @@
 ---
-- hosts: vagrant-test-server
+- hosts: vagrant-test-server:local
   sudo: true
   pre_tasks:
     - apt: update_cache=yes
