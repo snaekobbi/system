@@ -1,0 +1,7 @@
+---
+- hosts: vagrant-reprepro
+  sudo: true
+  pre_tasks:
+    - apt: update_cache=yes
+  roles:
+    - reprepro

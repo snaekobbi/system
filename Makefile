@@ -24,5 +24,10 @@ ssh_config :
 	else touch $@; \
 	fi
 
+roles/reprepro/files/reprepro-service :
+	mkdir -p $(dir $@)
+	cd $(dir $@) && wget -O- "http://github.com/snaekobbi/reprepro-service/tarball/cc7b3750c2f2367d4fe4af7543b11c1b58aa4329" | tar xf -
+	mv roles/reprepro/files/snaekobbi-reprepro-service-cc7b375 $@
+
 clean :
-	rm -rf $(DEBS) ssh_config
+	rm -rf $(DEBS) ssh_config roles/reprepro/files/reprepro-service

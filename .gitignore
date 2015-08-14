@@ -1,6 +1,7 @@
 /ssh_config
 .DS_Store
 /.vagrant/
+/roles/reprepro/files/reprepro-service/
 /roles/test-server/files/debs/org/daisy/pipeline/assembly/1.9.1/assembly-1.9.1-all.deb
 /roles/test-server/files/debs/org/daisy/pipeline/assembly/1.9.1/assembly-1.9.1-webui_all.deb
 /roles/test-server/files/debs/org/daisy/pipeline/modules/braille/mod-celia/1.0.0/mod-celia-1.0.0-all.deb

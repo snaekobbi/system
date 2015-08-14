@@ -1,0 +1,26 @@
+---
+- apt:
+    pkg: apt-transport-https
+    state: installed
+- apt_key:
+    id: "36A1D7869245C8950F966E92D8576A8BA88D21E9"
+    keyserver: "hkp://keyserver.ubuntu.com:80"
+    state: present
+- apt_repository:
+    repo: "deb http://get.docker.io/ubuntu docker main"
+    update_cache: yes
+    state: present
+- apt:
+    pkg: "{{ item }}"
+    state: installed
+  with_items:
+    - lxc-docker
+    - python-dev
+    - python-setuptools
+- easy_install:
+    name: pip
+- pip:
+    name: docker-py
+- service:
+    name: docker
+    state: started

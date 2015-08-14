@@ -1,0 +1,37 @@
+---
+- copy:
+    src: reprepro-service/
+    dest: /tmp/docker-build-reprepro-service/
+- docker_image:
+    name: reprepro-service
+    path: /tmp/docker-build-reprepro-service
+    state: build
+- file:
+    path: /etc/reprepro-service
+    state: directory
+- copy:
+    src: "{{ item }}"
+    dest: /etc/reprepro-service
+  with_items:
+    - REPOSITORIES
+    - ARTIFACTS
+- file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - /etc/reprepro-service/update-repo
+    - /var/reprepro-service/update-repo/log
+    - /var/reprepro-service/packages
+- file:
+    path: /var/reprepro-service/update-repo/log/update-repo.log
+    state: touch
+- docker:
+    image: reprepro-service
+    docker_api_version: "1.18"
+    ports:
+      - "{{ repo_server_port }}:80"
+    volumes:
+      - /etc/reprepro-service/update-repo:/update-repo/etc
+      - /var/reprepro-service/update-repo:/update-repo/var
+      - /var/reprepro-service/packages:/var/packages
+    state: started

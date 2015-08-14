@@ -7,4 +7,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     test_server.vm.box = "ubuntu/trusty64"
     test_server.vm.network "private_network", ip: "192.168.50.4"
   end
+  config.vm.define "vagrant-reprepro" do |reprepro|
+    reprepro.vm.box = "ubuntu/trusty64"
+    reprepro.vm.network "private_network", ip: "192.168.50.5"
+  end
 end

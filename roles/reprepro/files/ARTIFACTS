@@ -1,0 +1,7 @@
+org.daisy.pipeline:assembly
+org.daisy.pipeline.modules.braille:mod-celia
+org.daisy.pipeline.modules.braille:mod-dedicon
+org.daisy.pipeline.modules.braille:mod-mtm
+org.daisy.pipeline.modules.braille:mod-nlb
+org.daisy.pipeline.modules.braille:mod-nota
+org.daisy.pipeline.modules.braille:mod-sbs
