@@ -1,14 +1,35 @@
+Braille in DP2 v1.1.0
+=====================
+
+Requirements covered
+--------------------
+- [v1.0#4.3:53](http://snaekobbi.github.io/requirements/v1.0/index.xhtml#4.3:53)
+- [v1.0#4.3:54](http://snaekobbi.github.io/requirements/v1.0/index.xhtml#4.3:54)
+- [v1.0#4.3:55](http://snaekobbi.github.io/requirements/v1.0/index.xhtml#4.3:55)
+
+Components
+----------
+- pipeline-assembly [1.9.2](https://github.com/daisy/pipeline-assembly/releases/tag/v1.9.2) (incl. pipeline-mod-braille
+  [1.9.2](https://github.com/daisy/pipeline-mod-braille/releases/tag/v1.9.2))
+- pipeline-mod-celia [1.0.0](https://github.com/snaekobbi/pipeline-mod-celia/releases/tag/v1.0.0)
+- pipeline-mod-dedicon [1.0.0](https://github.com/snaekobbi/pipeline-mod-dedicon/releases/tag/v1.0.0)
+- pipeline-mod-mtm [1.0.0](https://github.com/snaekobbi/pipeline-mod-mtm/releases/tag/v1.0.0)
+- pipeline-mod-nlb [1.0.0](https://github.com/snaekobbi/pipeline-mod-nlb/releases/tag/v1.0.0)
+- pipeline-mod-nota [1.0.0](https://github.com/snaekobbi/pipeline-mod-nota/releases/tag/v1.0.0)
+- pipeline-mod-sbs [1.0.0](https://github.com/snaekobbi/pipeline-mod-sbs/releases/tag/v1.0.0)
+
+
 Braille in DP2 v1.0.0
 =====================
 This first release provides a basic working system consisting of the DP2 server and web UI, plus agency-specific modules for MTM, SBS, NLB, Nota, Celia and Dedicon. All 4.3 related work that has been done so far has been included.
 
 Requirements covered
 --------------------
-- [v1.0#4.3:34](http://dev.pef-format.org/dp2/v1.0/index.xhtml#4.3:34) (partly)
-- [v1.0#4.3:37](http://dev.pef-format.org/dp2/v1.0/index.xhtml#4.3:37) (partly)
-- [v1.0#4.3:38](http://dev.pef-format.org/dp2/v1.0/index.xhtml#4.3:38) (partly)
-- [v1.0#4.3:39](http://dev.pef-format.org/dp2/v1.0/index.xhtml#4.3:39) (partly)
-- [v1.0#4.3:41](http://dev.pef-format.org/dp2/v1.0/index.xhtml#4.3:41) (partly)
+- [v1.0#4.3:34](http://snaekobbi.github.io/requirements/v1.0/index.xhtml#4.3:34) (partly)
+- [v1.0#4.3:37](http://snaekobbi.github.io/requirements/v1.0/index.xhtml#4.3:37) (partly)
+- [v1.0#4.3:38](http://snaekobbi.github.io/requirements/v1.0/index.xhtml#4.3:38) (partly)
+- [v1.0#4.3:39](http://snaekobbi.github.io/requirements/v1.0/index.xhtml#4.3:39) (partly)
+- [v1.0#4.3:41](http://snaekobbi.github.io/requirements/v1.0/index.xhtml#4.3:41) (partly)
 
 Components
 ----------
