@@ -1,16 +1,21 @@
-DEBS := $(addprefix roles/test-server/files/debs/,org/daisy/pipeline/assembly/1.9.3/assembly-1.9.3-all.deb \
-                                                  org/daisy/pipeline/assembly/1.9.1/assembly-1.9.1-webui_all.deb \
-                                                  org/daisy/pipeline/modules/braille/mod-celia/1.0.0/mod-celia-1.0.0-all.deb \
-                                                  org/daisy/pipeline/modules/braille/mod-dedicon/1.0.0/mod-dedicon-1.0.0-all.deb \
-                                                  org/daisy/pipeline/modules/braille/mod-mtm/1.0.0/mod-mtm-1.0.0-all.deb \
-                                                  org/daisy/pipeline/modules/braille/mod-nlb/1.1.0/mod-nlb-1.1.0-all.deb \
-                                                  org/daisy/pipeline/modules/braille/mod-nota/1.0.0/mod-nota-1.0.0-all.deb \
-                                                  org/daisy/pipeline/modules/braille/mod-sbs/1.0.0/mod-sbs-1.0.0-all.deb \
-                                                  )
+DEBS = $(addprefix roles/test-server/files/debs/, \
+             org/daisy/pipeline/assembly/$(engine_version)/assembly-$(engine_version)-all.deb \
+             org/daisy/pipeline/assembly/$(webui_version)/assembly-$(webui_version)-webui_all.deb \
+             org/daisy/pipeline/modules/braille/mod-celia/$(mod_celia_version)/mod-celia-$(mod_celia_version)-all.deb \
+             org/daisy/pipeline/modules/braille/mod-dedicon/$(mod_dedicon_version)/mod-dedicon-$(mod_dedicon_version)-all.deb \
+             org/daisy/pipeline/modules/braille/mod-mtm/$(mod_mtm_version)/mod-mtm-$(mod_mtm_version)-all.deb \
+             org/daisy/pipeline/modules/braille/mod-nlb/$(mod_nlb_version)/mod-nlb-$(mod_nlb_version)-all.deb \
+             org/daisy/pipeline/modules/braille/mod-nota/$(mod_nota_version)/mod-nota-$(mod_nota_version)-all.deb \
+             org/daisy/pipeline/modules/braille/mod-sbs/$(mod_sbs_version)/mod-sbs-$(mod_sbs_version)-all.deb)
+
+-include roles/test-server/vars/debs.mk
 
 .PHONY : all ssh_config clean
 
 all : ssh_config $(DEBS)
+
+roles/test-server/vars/debs.mk : %.mk : %.yml
+	sed -e '/^---/d;s/ *: */ := /g' $< >$@
 
 $(DEBS) :
 	mkdir -p $(dir $@)
