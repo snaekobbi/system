@@ -1,3 +1,19 @@
+Braille in DP2 v1.2.2
+=====================
+Update of pipeline-mod-mtm
+
+Components
+----------
+- pipeline-assembly [1.9.5](https://github.com/daisy/pipeline-assembly/releases/tag/v1.9.5) (incl.
+  pipeline-mod-braille [1.9.5](https://github.com/daisy/pipeline-mod-braille/releases/tag/v1.9.5))
+- pipeline-mod-celia [1.0.0](https://github.com/snaekobbi/pipeline-mod-celia/releases/tag/v1.0.0)
+- pipeline-mod-dedicon [1.0.0](https://github.com/snaekobbi/pipeline-mod-dedicon/releases/tag/v1.0.0)
+- **pipeline-mod-mtm [1.2.0](https://github.com/snaekobbi/pipeline-mod-mtm/releases/tag/v1.2.0)**
+- pipeline-mod-nlb [1.1.0](https://github.com/snaekobbi/pipeline-mod-nlb/releases/tag/v1.1.0)
+- pipeline-mod-nota [1.0.0](https://github.com/snaekobbi/pipeline-mod-nota/releases/tag/v1.0.0)
+- pipeline-mod-sbs [1.1.0](https://github.com/snaekobbi/pipeline-mod-sbs/releases/tag/v1.1.0)
+
+
 Braille in DP2 v1.2.1
 =====================
 Requirements covered
