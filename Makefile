@@ -24,7 +24,8 @@ roles/test-server/vars/debs.mk : %.mk : %.yml
 
 $(STABLE_DEBS) :
 	mkdir -p $(dir $@)
-	wget -O - "$(subst roles/test-server/files/debs/,http://repo1.maven.org/maven2/,$@)" > $@
+	wget -O - "$(subst roles/test-server/files/debs/,http://repo1.maven.org/maven2/,$@)" > $@ || \
+	wget -O - "$(subst roles/test-server/files/debs/,https://oss.sonatype.org/content/groups/staging/,$@)" > $@
 
 $(SNAPSHOT_DEBS) : roles/test-server/files/debs/% : $(M2_REPO)/%
 	mkdir -p $(dir $@)
