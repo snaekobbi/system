@@ -2,10 +2,29 @@ Braille in DP2 v1.3.0
 =====================
 Requirements covered
 --------------------
+- [v1.3#4.5:78](http://snaekobbi.github.io/requirements/v1.3/#4.5:78)
+- [v1.3#4.7:102](http://snaekobbi.github.io/requirements/v1.3/#4.7:102)
+
+Components
+----------
+- **pipeline-assembly [1.9.7](https://github.com/daisy/pipeline-assembly/releases/tag/v1.9.7)** (incl.
+  **pipeline-mod-braille [1.9.7](https://github.com/daisy/pipeline-mod-braille/releases/tag/v1.9.7)**)
+- **pipeline-mod-celia [1.0.1](https://github.com/snaekobbi/pipeline-mod-celia/releases/tag/v1.0.1)**
+- **pipeline-mod-dedicon [1.1.0](https://github.com/snaekobbi/pipeline-mod-dedicon/releases/tag/v1.1.0)**
+- **pipeline-mod-mtm [1.3.0](https://github.com/snaekobbi/pipeline-mod-mtm/releases/tag/v1.3.0)**
+- **pipeline-mod-nlb [1.3.0](https://github.com/snaekobbi/pipeline-mod-nlb/releases/tag/v1.3.0)**
+- **pipeline-mod-nota [1.0.1](https://github.com/snaekobbi/pipeline-mod-nota/releases/tag/v1.0.1)**
+- **pipeline-mod-sbs [1.2.0](https://github.com/snaekobbi/pipeline-mod-sbs/releases/tag/v1.2.0)**
+
+
+Braille in DP2 v1.3.0
+=====================
+Requirements covered
+--------------------
 - [v1.3#4.3:34](http://snaekobbi.github.io/requirements/v1.3/#4.3:34) (fixes)
 - [v1.3#4.4:54](http://snaekobbi.github.io/requirements/v1.3/#4.4:54) (fixes)
 - [v1.3#4.4:55](http://snaekobbi.github.io/requirements/v1.3/#4.4:55) (fixes)
-- [v1.2#4.4:74](http://snaekobbi.github.io/requirements/v1.2/#4.4:74) (fixes)
+- [v1.3#4.4:74](http://snaekobbi.github.io/requirements/v1.3/#4.4:74) (fixes)
 - [v1.3#4.5:78](http://snaekobbi.github.io/requirements/v1.3/#4.5:78) (partly)
 - [v1.3#4.5:80](http://snaekobbi.github.io/requirements/v1.3/#4.5:80)
 - [v1.3#4.5:81](http://snaekobbi.github.io/requirements/v1.3/#4.5:81)
@@ -19,7 +38,7 @@ Requirements covered
 Components
 ----------
 - **pipeline-assembly [1.9.6](https://github.com/daisy/pipeline-assembly/releases/tag/v1.9.6)** (incl.
-  **pipeline-mod-braille [1.9.5](https://github.com/daisy/pipeline-mod-braille/releases/tag/v1.9.6)**)
+  **pipeline-mod-braille [1.9.6](https://github.com/daisy/pipeline-mod-braille/releases/tag/v1.9.6)**)
 - **pipeline-mod-celia [1.0.1](https://github.com/snaekobbi/pipeline-mod-celia/releases/tag/v1.0.1)**
 - **pipeline-mod-dedicon [1.1.0](https://github.com/snaekobbi/pipeline-mod-dedicon/releases/tag/v1.1.0)**
 - **pipeline-mod-mtm [1.3.0](https://github.com/snaekobbi/pipeline-mod-mtm/releases/tag/v1.3.0)**
