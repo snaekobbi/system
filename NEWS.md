@@ -1,4 +1,4 @@
-Braille in DP2 v1.3.0
+Braille in DP2 v1.4.0
 =====================
 Requirements covered
 --------------------
