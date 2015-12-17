@@ -19,7 +19,7 @@
     - "debs/org/daisy/pipeline/modules/braille/mod-nota/{{ mod_nota_version }}/mod-nota-{{ mod_nota_version }}-all.deb"
     - "debs/org/daisy/pipeline/modules/braille/mod-sbs/{{ mod_sbs_version }}/mod-sbs-{{ mod_sbs_version }}-all.deb"
 # purge daisy-pipeline2 in order to remove database
-- shell: DEBIAN_FRONTEND=noninteractive apt-get -y --purge remove daisy-pipeline2
+#- shell: DEBIAN_FRONTEND=noninteractive apt-get -y --purge remove daisy-pipeline2
 - shell: DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/debs/*.deb
 - service:
     name: "{{ item }}"
