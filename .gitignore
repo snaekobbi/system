@@ -1,11 +1,6 @@
 /ssh_config
 .DS_Store
 /.vagrant/
-/roles/test-server/files/debs/org/daisy/pipeline/assembly/*
-/roles/test-server/files/debs/org/daisy/pipeline/modules/braille/mod-celia/*
-/roles/test-server/files/debs/org/daisy/pipeline/modules/braille/mod-dedicon/*
-/roles/test-server/files/debs/org/daisy/pipeline/modules/braille/mod-mtm/*
-/roles/test-server/files/debs/org/daisy/pipeline/modules/braille/mod-nlb/*
-/roles/test-server/files/debs/org/daisy/pipeline/modules/braille/mod-nota/*
-/roles/test-server/files/debs/org/daisy/pipeline/modules/braille/mod-sbs/*
-/roles/test-server/vars/debs.mk
+/roles/test-server/files/debs/*
+/roles/test-server/vars/versions.mk
+/maven/**/*.deb

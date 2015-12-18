@@ -5,6 +5,7 @@ Assembly of the complete system in the form of an [Ansible][] script
 ## Testing the script with [Vagrant][]
 
     vagrant up
+    make vagrant
     make
     ansible-playbook test-server.yml -l test
 
