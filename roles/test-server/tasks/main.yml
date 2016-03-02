@@ -1,5 +1,5 @@
 ---
-- include_vars: debs.yml
+- include_vars: versions.yml
 - apt:
     pkg: openjdk-7-jre
     state: installed
@@ -10,14 +10,14 @@
     src: "{{ item }}"
     dest: /tmp/debs/
   with_items:
-    - "debs/org/daisy/pipeline/assembly/{{ engine_version }}/assembly-{{ engine_version }}-all.deb"
-    - "debs/org/daisy/pipeline/assembly/{{ webui_version }}/assembly-{{ webui_version }}-webui_all.deb"
-    - "debs/org/daisy/pipeline/modules/braille/mod-celia/{{ mod_celia_version }}/mod-celia-{{ mod_celia_version }}-all.deb"
-    - "debs/org/daisy/pipeline/modules/braille/mod-dedicon/{{ mod_dedicon_version }}/mod-dedicon-{{ mod_dedicon_version }}-all.deb"
-    - "debs/org/daisy/pipeline/modules/braille/mod-mtm/{{ mod_mtm_version }}/mod-mtm-{{ mod_mtm_version }}-all.deb"
-    - "debs/org/daisy/pipeline/modules/braille/mod-nlb/{{ mod_nlb_version }}/mod-nlb-{{ mod_nlb_version }}-all.deb"
-    - "debs/org/daisy/pipeline/modules/braille/mod-nota/{{ mod_nota_version }}/mod-nota-{{ mod_nota_version }}-all.deb"
-    - "debs/org/daisy/pipeline/modules/braille/mod-sbs/{{ mod_sbs_version }}/mod-sbs-{{ mod_sbs_version }}-all.deb"
+    - "debs/engine-{{ engine_version }}.deb"
+    - "debs/webui-{{ webui_version }}.deb"
+    - "debs/mod-celia-{{ mod_celia_version }}.deb"
+    - "debs/mod-dedicon-{{ mod_dedicon_version }}.deb"
+    - "debs/mod-mtm-{{ mod_mtm_version }}.deb"
+    - "debs/mod-nlb-{{ mod_nlb_version }}.deb"
+    - "debs/mod-nota-{{ mod_nota_version }}.deb"
+    - "debs/mod-sbs-{{ mod_sbs_version }}.deb"
 # remove database
 - file:
     path: /var/opt/daisy-pipeline2

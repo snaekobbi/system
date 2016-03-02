@@ -1,3 +1,49 @@
+Braille in DP2 v1.6.0
+=====================
+Requirements covered
+--------------------
+- [v1.5#4.4:56](http://snaekobbi.github.io/requirements/v1.5/#4.4:56)
+- [v1.5#4.4:57](http://snaekobbi.github.io/requirements/v1.5/#4.4:57)
+- [v1.5#4.4:60](http://snaekobbi.github.io/requirements/v1.5/#4.4:60) (partly: no matrix tables)
+- [v1.5#4.4:62](http://snaekobbi.github.io/requirements/v1.5/#4.4:62) (partly: no matrix tables)
+- [v1.5#4.4:65](http://snaekobbi.github.io/requirements/v1.5/#4.4:65)
+- [v1.5#4.6:88](http://snaekobbi.github.io/requirements/v1.5/#4.6:88) (partly: only maximal number of sheets)
+- [v1.5#4.6:89](http://snaekobbi.github.io/requirements/v1.5/#4.6:89)
+- [v1.5#4.6:90](http://snaekobbi.github.io/requirements/v1.5/#4.6:90)
+- [v1.5#4.6:91](http://snaekobbi.github.io/requirements/v1.5/#4.6:91)
+
+Components
+----------
+- **pipeline-assembly [1.9.9](https://github.com/daisy/pipeline-assembly/releases/tag/v1.9.9)** (incl.
+  **pipeline-mod-braille [1.9.9](https://github.com/daisy/pipeline-mod-braille/releases/tag/v1.9.9)**)
+- pipeline-mod-celia [1.1.0](https://github.com/snaekobbi/pipeline-mod-celia/releases/tag/v1.1.0)
+- pipeline-mod-dedicon [1.2.0](https://github.com/snaekobbi/pipeline-mod-dedicon/releases/tag/v1.2.0)
+- pipeline-mod-mtm [1.4.0](https://github.com/snaekobbi/pipeline-mod-mtm/releases/tag/v1.4.0)
+- **pipeline-mod-nlb [1.5.0](https://github.com/snaekobbi/pipeline-mod-nlb/releases/tag/v1.5.0)**
+- pipeline-mod-nota [1.1.0](https://github.com/snaekobbi/pipeline-mod-nota/releases/tag/v1.1.0)
+- **pipeline-mod-sbs [1.3.1](https://github.com/snaekobbi/pipeline-mod-sbs/releases/tag/v1.3.1)**
+
+
+Braille in DP2 v1.5.0
+=====================
+Requirements covered
+--------------------
+- [v1.4#4.3:36](http://snaekobbi.github.io/requirements/v1.4/#4.3:36) 
+- [v1.4#4.5:78](http://snaekobbi.github.io/requirements/v1.4/#4.5:78) (fixes)
+- [v1.4#4.8:106](http://snaekobbi.github.io/requirements/v1.4/#4.8:106)
+
+Components
+----------
+- **pipeline-assembly [1.9.8](https://github.com/daisy/pipeline-assembly/releases/tag/v1.9.8)** (incl.
+  **pipeline-mod-braille [1.9.8](https://github.com/daisy/pipeline-mod-braille/releases/tag/v1.9.8)**)
+- **pipeline-mod-celia [1.1.0](https://github.com/snaekobbi/pipeline-mod-celia/releases/tag/v1.1.0)**
+- **pipeline-mod-dedicon [1.2.0](https://github.com/snaekobbi/pipeline-mod-dedicon/releases/tag/v1.2.0)**
+- **pipeline-mod-mtm [1.4.0](https://github.com/snaekobbi/pipeline-mod-mtm/releases/tag/v1.4.0)**
+- **pipeline-mod-nlb [1.4.0](https://github.com/snaekobbi/pipeline-mod-nlb/releases/tag/v1.4.0)**
+- **pipeline-mod-nota [1.1.0](https://github.com/snaekobbi/pipeline-mod-nota/releases/tag/v1.1.0)**
+- **pipeline-mod-sbs [1.3.0](https://github.com/snaekobbi/pipeline-mod-sbs/releases/tag/v1.3.0)**
+
+
 Braille in DP2 v1.4.0
 =====================
 Requirements covered
