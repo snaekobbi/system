@@ -5,6 +5,9 @@
     state: installed
 - file:
     path: /tmp/debs
+    state: absent
+- file:
+    path: /tmp/debs
     state: directory
 - copy:
     src: "{{ item }}"
