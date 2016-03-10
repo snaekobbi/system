@@ -28,7 +28,7 @@ $(DEB_DIR)/engine-$(engine_version).deb : \
 	cp $< $@
 
 $(DEB_DIR)/webui-$(webui_version).deb : \
-	maven/org/daisy/pipeline/assembly/$(call as-snapshot,$(webui_version))/assembly-$(webui_version)-webui_all.deb
+	maven/org/daisy/pipeline/webui/$(call as-snapshot,$(webui_version))/webui-$(webui_version).deb
 	@mkdir -p $(dir $@)
 	cp $< $@
 
@@ -71,6 +71,7 @@ maven/% :
 	wget -O - "$(subst maven/,http://repo1.maven.org/maven2/,$@)" 2>/dev/null > $@ || \
 	wget -O - "$(subst maven/,https://oss.sonatype.org/content/groups/staging/,$@)" 2>/dev/null > $@ || \
 	wget -O - "$(subst maven/,https://oss.sonatype.org/content/repositories/snapshots/,$@)" 2>/dev/null > $@ || \
+	curl "$(subst maven/,file:///home/jostein/.m2/repository/,$@)" 2>/dev/null > $@ || \
 	( rm $@ && exit 1 )
 
 .PHONY : vagrant

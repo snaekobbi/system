@@ -1,7 +1,7 @@
 ---
 - include_vars: versions.yml
 - apt:
-    pkg: openjdk-7-jre
+    pkg: openjdk-8-jre
     state: installed
 - file:
     path: /tmp/debs
@@ -31,4 +31,4 @@
     state: started
   with_items:
     - pipeline2d
-    - pipeline2-webuid
+    - daisy-pipeline2-webui
