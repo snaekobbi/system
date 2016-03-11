@@ -1,8 +1,12 @@
 ---
 - include_vars: versions.yml
+- apt_repository:
+    repo: 'deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu precise main'
+    state: present
 - apt:
-    pkg: openjdk-7-jre
+    pkg: openjdk-8-jre
     state: installed
+    force: yes
 - file:
     path: /tmp/debs
     state: absent
