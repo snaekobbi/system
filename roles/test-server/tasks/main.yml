@@ -38,4 +38,4 @@
     state: started
   with_items:
     - pipeline2d
-    - pipeline2-webuid
+    - daisy-pipeline2-webui
