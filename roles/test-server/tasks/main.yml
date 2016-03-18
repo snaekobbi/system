@@ -30,6 +30,9 @@
     path: /var/opt/daisy-pipeline2
     state: absent
 - shell: DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/debs/*.deb
+- copy:
+    src: opt/daisy-pipeline2/etc/system.properties
+    dest: /opt/daisy-pipeline2/etc/
 - service:
     name: "{{ item }}"
     state: started
