@@ -66,6 +66,9 @@ RUN /root/setup.sh
 COPY src/dp2 /root/dp2-cli/dp2
 ENV PATH $PATH:/root/dp2-cli
 
+# Bind engine to 0.0.0.0 instead of localhost
+RUN sed -i 's/org.daisy.pipeline.ws.host=.*/org.daisy.pipeline.ws.host=0.0.0.0/' /opt/daisy-pipeline2/etc/system.properties
+
 EXPOSE 8181 9000
 
 CMD service pipeline2d start && service daisy-pipeline2-webui start && tail -f /var/log/daisy-pipeline2/daisy-pipeline.log
