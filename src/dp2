@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function start_pipeline2() {
+    if [ "`service pipeline2d status | grep 'not running' | wc -l`" = "1" ]; then
+        echo "Attempting to start Pipeline 2..."
+        service pipeline2d start
+        sleep 2
+        start_pipeline2
+    fi
+}
+
+start_pipeline2
+JAVA_HOME=$JAVA_7_HOME /root/dp2-cli/dp2-cli "$@"
