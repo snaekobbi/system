@@ -33,25 +33,19 @@ function get() {
     wget --no-verbose "$DEB_URL"
 }
 
-# should merge with master and read these from versions.yml instead
-ENGINE_VERSION="1.9.11-20160408.082142-7"
-WEBUI_VERSION="2.1.3"
-MOD_CELIA_VERSION="1.1.1-20160325.111013-1"
-MOD_DEDICON_VERSION="1.4.0-20160325.110919-1"
-MOD_MTM_VERSION="1.4.1-20160325.140047-5"
-MOD_NLB_VERSION="1.6.1-20160325.133755-2"
-MOD_NOTA_VERSION="1.1.1-20160407.181802-5"
-MOD_SBS_VERSION="1.3.2-20160325.134355-1"
+function read_version() {
+    cat $HOME/versions.yml | grep "$1_version" | sed 's/.*: *//'
+}
 
 cd $HOME
 mkdir $HOME/debs && cd $HOME/debs
-get org.daisy.pipeline:assembly:$ENGINE_VERSION
-get org.daisy.pipeline:webui:$WEBUI_VERSION
-get org.daisy.pipeline.modules.braille:mod-celia:$MOD_CELIA_VERSION
-get org.daisy.pipeline.modules.braille:mod-dedicon:$MOD_DEDICON_VERSION
-get org.daisy.pipeline.modules.braille:mod-mtm:$MOD_MTM_VERSION
-get org.daisy.pipeline.modules.braille:mod-nlb:$MOD_NLB_VERSION
-get org.daisy.pipeline.modules.braille:mod-nota:$MOD_NOTA_VERSION
-get org.daisy.pipeline.modules.braille:mod-sbs:$MOD_SBS_VERSION
+get "org.daisy.pipeline:assembly:`read_version engine`"
+get "org.daisy.pipeline:webui:`read_version webui`"
+get "org.daisy.pipeline.modules.braille:mod-celia:`read_version mod_celia`"
+get "org.daisy.pipeline.modules.braille:mod-dedicon:`read_version mod_dedicon`"
+get "org.daisy.pipeline.modules.braille:mod-mtm:`read_version mod_mtm`"
+get "org.daisy.pipeline.modules.braille:mod-nlb:`read_version mod_nlb`"
+get "org.daisy.pipeline.modules.braille:mod-nota:`read_version mod_nota`"
+get "org.daisy.pipeline.modules.braille:mod-sbs:`read_version mod_sbs`"
 
 DEBIAN_FRONTEND=noninteractive dpkg -i *.deb

@@ -40,6 +40,7 @@ ENV PATH $PATH:/root/dp2-cli
 
 # Install latest version of the Pipeline 2 engine, braille modules, and Web UI
 COPY src/setup.sh /root/setup.sh
+COPY roles/test-server/vars/versions.yml /root/versions.yml
 RUN /root/setup.sh
 
 # Bind engine to 0.0.0.0 instead of localhost
