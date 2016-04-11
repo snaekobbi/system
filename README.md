@@ -52,7 +52,13 @@ Engine, enter "http://localhost:8181/ws".
 
 ### Building the image
 
-If you want to build the image yourself, you can run this command:
+It is recommended using the pre-built images available at
+[hub.docker.com/r/snaekobbi/system/](https://hub.docker.com/r/snaekobbi/system/).
+Use the image ID `snaekobbi/system` to get the latest version of the system,
+and optionally add a tag to get a specific version of the system, for instance
+`snaekobbi/system:v1.7.0`.
+
+If instead you want to build the image yourself, you can run this command:
 
 ```
 docker build .
@@ -65,12 +71,6 @@ Successfully built 72ca1a0390e8
 ```
 
 In this case, `72ca1a0390e8` is the image ID.
-
-@josteinaj has uploaded pre-built images to https://hub.docker.com/r/josteinaj/snaekobbi/ which
-means you can use those instead by simply referring to `josteinaj/snaekobbi` instead of
-building your own image. That image will be used in the following commands.
-
-**TODO**: set up automatic building of `snaekobbi/system` images instead.
 
 
 ### Basic usage with both Web UI and Engine
@@ -101,7 +101,7 @@ Appending `bash` to the end will start an interactive shell
 instead of starting the engine+webui:
 
 ```
-docker run -it-p 9000:9000 -p 8181:8181 josteinaj/snaekobbi bash
+docker run -it -p 9000:9000 -p 8181:8181 josteinaj/snaekobbi bash
 ```
 
 In the shell you can use the `dp2` command to interact with Pipeline 2.
@@ -119,7 +119,7 @@ service daisy-pipeline2-webui start
 
 There are several ways to do this of course, this is just an example.
 
-- Create a directory with the input books: `$HOME/snaekobbi-docker/target/input`
+- Create a directory with the input books: `$HOME/snaekobbi/system/target/input`
 - Put all your DTBooks there (`551848.xml`, `554569.xml`, etc.)
 - Create an empty directory for the output books: `$HOME/snaekobbi/system/target/output`
 - Create a bash script that creates jobs, waits for them to finish, and optionally creates logs: `$HOME/snaekobbi/system/target/batch.sh`
