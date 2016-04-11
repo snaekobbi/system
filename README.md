@@ -76,13 +76,16 @@ In this case, `72ca1a0390e8` is the image ID.
 ### Basic usage with both Web UI and Engine
 
 ```
-docker run -it -p 9000:9000 -p 8181:8181 josteinaj/snaekobbi
+docker run -it -p 9000:9000 -p 8181:8181 snaekobbi/system:1.7.0-latest
 ```
 
 Now, open [http://localhost:9000/](http://localhost:9000/) in a browser.
 
-If you are not running Linux, you will have to use the IP address of your VM,
-which you can find by running `docker-machine ls`.
+If you are not running GNU/Linux, you will have to use the IP address
+of your VM, which you can find by running `docker-machine ls`. An
+alternative is to use port forwarding. For VirtualBox driver:
+`VBoxManage controlvm <name of docker machine> natpf1
+"tcp-port9000,tcp,127.0.0.1,9000,,9000"`.
 
 You can also query the engine directly at the endpoint
 [http://localhost:8181/ws/](http://localhost:8181/ws/). For instance, try the following
@@ -101,7 +104,7 @@ Appending `bash` to the end will start an interactive shell
 instead of starting the engine+webui:
 
 ```
-docker run -it -p 9000:9000 -p 8181:8181 josteinaj/snaekobbi bash
+docker run -it -p 9000:9000 -p 8181:8181 snaekobbi/system:1.7.0-latest bash
 ```
 
 In the shell you can use the `dp2` command to interact with Pipeline 2.
@@ -132,5 +135,5 @@ docker run -it \
         -v $HOME/snaekobbi/system/target/input:/mnt/input:ro \
         -v $HOME/snaekobbi/system/target/output:/mnt/output \
         -v $HOME/snaekobbi/system/target/batch.sh:/mnt/script/batch.sh \
-        josteinaj/snaekobbi /mnt/script/batch.sh
+        snaekobbi/system:1.7.0-latest /mnt/script/batch.sh
 ```
