@@ -1,8 +1,15 @@
 ---
 - include_vars: versions.yml
+- apt_repository:
+    repo: 'deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu precise main'
+    state: present
 - apt:
-    pkg: openjdk-7-jre
+    pkg: openjdk-8-jre
     state: installed
+    force: yes
+- file:
+    path: /tmp/debs
+    state: absent
 - file:
     path: /tmp/debs
     state: directory
@@ -23,9 +30,12 @@
     path: /var/opt/daisy-pipeline2
     state: absent
 - shell: DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/debs/*.deb
+- template:
+    src: opt/daisy-pipeline2/etc/system.properties
+    dest: /opt/daisy-pipeline2/etc/system.properties
 - service:
     name: "{{ item }}"
     state: started
   with_items:
     - pipeline2d
-    - pipeline2-webuid
+    - daisy-pipeline2-webui

@@ -28,7 +28,7 @@ $(DEB_DIR)/engine-$(engine_version).deb : \
 	cp $< $@
 
 $(DEB_DIR)/webui-$(webui_version).deb : \
-	maven/org/daisy/pipeline/assembly/$(call as-snapshot,$(webui_version))/assembly-$(webui_version)-webui_all.deb
+	maven/org/daisy/pipeline/webui/$(call as-snapshot,$(webui_version))/webui-$(webui_version).deb
 	@mkdir -p $(dir $@)
 	cp $< $@
 
