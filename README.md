@@ -10,7 +10,6 @@ Assembly of the complete system in the form of both an [Ansible][] script and as
 
     vagrant up
     make vagrant
-    make
     ansible-playbook test-server.yml -l test
 
 Now open the web UI at http://192.168.50.4:9000. When asked for the web API's address for the Pipeline 2

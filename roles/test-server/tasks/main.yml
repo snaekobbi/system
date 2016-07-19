@@ -13,6 +13,7 @@
 - file:
     path: /tmp/debs
     state: directory
+- action: fetch_debs_from_maven
 - copy:
     src: "{{ item }}"
     dest: /tmp/debs/
