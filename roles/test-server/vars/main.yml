@@ -1,0 +1,6 @@
+---
+pipeline2_maven_repos:
+  - http://repo1.cache.org/cache2/
+  - http://repo1.maven.org/maven2/
+  - https://oss.sonatype.org/content/groups/staging/
+  - https://oss.sonatype.org/content/repositories/snapshots/

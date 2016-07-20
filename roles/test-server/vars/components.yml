@@ -1,0 +1,42 @@
+---
+pipeline2_engine:
+  g: org.daisy.pipeline
+  a: assembly
+  v: 1.9.15
+  c: all
+pipeline2_webui:
+  g: org.daisy.pipeline
+  a: webui
+  v: 2.5.1
+  c: ""
+pipeline2_extra_modules:
+  - name: mod-celia
+    g: org.daisy.pipeline.modules.braille
+    a: mod-celia
+    v: 1.4.0
+    c: all
+  - name: mod-dedicon
+    g: org.daisy.pipeline.modules.braille
+    a: mod-dedicon
+    v: 1.6.0
+    c: all
+  - name: mod-mtm
+    g: org.daisy.pipeline.modules.braille
+    a: mod-mtm
+    v: 1.6.1
+    c: all
+  - name: mod-nlb
+    g: org.daisy.pipeline.modules.braille
+    a: mod-nlb
+    v: 1.9.0
+    c: all
+  - name: mod-nota
+    g: org.daisy.pipeline.modules.braille
+    a: mod-nota
+    v: 1.3.3
+    c: all
+  - name: mod-sbs
+    g: org.daisy.pipeline.modules.braille
+    a: mod-sbs
+    v: 1.8.0
+    c: all

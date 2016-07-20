@@ -2,6 +2,4 @@
 .DS_Store
 /.vagrant/
 /roles/test-server/files/debs/*.deb
-/roles/test-server/files/debs/cache/**/*.deb
-/roles/test-server/vars/versions.mk
 *.pyc
