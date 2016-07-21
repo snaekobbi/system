@@ -5,6 +5,9 @@ Assembly of the complete system in the form of both an [Ansible][] script and as
 
 ## Ansible
 
+### Setup
+
+    ansible-galaxy install -r install_roles.yml -p roles
 
 ### Testing the script with [Vagrant][]
 
@@ -14,36 +17,6 @@ Assembly of the complete system in the form of both an [Ansible][] script and as
 
 Now open the web UI at http://192.168.50.4:9000. When asked for the web API's address for the Pipeline 2
 Engine, enter "http://localhost:8181/ws".
-
-
-### Release procedure
-
-- Create a release branch.
-
-  ```sh
-  git checkout -b release/${VERSION}
-  ```
-  
-- Resolve snapshot versions in `roles/test-server/vars/debs.yml` and commit.
-- Make release notes and commit.
-- Tag
-
-  ```sh
-  git tag -s -a v${VERSION} -m "Version ${VERSION}"
-  ```
-    
-- Push the tag.
-
-  ```sh
-  git push origin v${VERSION}
-  ```
-  
-- Add the release notes to http://github.com/snaekobbi/system/releases/v${VERSION}.
-
-
-[system]: https://github.com/snaekobbi/system
-[ansible]: http://www.ansible.com
-[vagrant]: https://www.vagrantup.com/
 
 
 ## Docker image
@@ -136,3 +109,32 @@ docker run -it \
         -v $HOME/snaekobbi/system/target/batch.sh:/mnt/script/batch.sh \
         snaekobbi/system:1.7.0-latest /mnt/script/batch.sh
 ```
+
+## Release procedure
+
+- Create a release branch.
+
+  ```sh
+  git checkout -b release/${VERSION}
+  ```
+  
+- Resolve snapshot versions in `roles/test-server/vars/debs.yml` and commit.
+- Make release notes and commit.
+- Tag
+
+  ```sh
+  git tag -s -a v${VERSION} -m "Version ${VERSION}"
+  ```
+    
+- Push the tag.
+
+  ```sh
+  git push origin v${VERSION}
+  ```
+  
+- Add the release notes to http://github.com/snaekobbi/system/releases/v${VERSION}.
+
+
+[system]: https://github.com/snaekobbi/system
+[ansible]: http://www.ansible.com
+[vagrant]: https://www.vagrantup.com/

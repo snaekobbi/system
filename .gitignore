@@ -2,4 +2,4 @@
 .DS_Store
 /.vagrant/
 /debs/*.deb
-*.pyc
+/roles/pipeline2/
