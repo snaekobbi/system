@@ -1,5 +1,4 @@
 ---
-- include_vars: components.yml
 - apt_repository:
     repo: 'deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu precise main'
     state: present
@@ -14,41 +13,14 @@
     path: /tmp/debs
     state: directory
 # local action
-- fetch_deb_from_maven:
-    group_id: "{{ item.g }}"
-    artifact_id: "{{ item.a }}"
-    version: "{{ item.v }}"
-    classifier: "{{ item.c }}"
-    dest: "debs/{{ item.name }}-{{ item.v }}.deb"
-  with_items:
-    - name: engine
-      g: "{{ pipeline2_engine.g }}"
-      a: "{{ pipeline2_engine.a }}"
-      v: "{{ pipeline2_engine.v }}"
-      c: "{{ pipeline2_engine.c }}"
-    - name: webui
-      g: "{{ pipeline2_webui.g }}"
-      a: "{{ pipeline2_webui.a }}"
-      v: "{{ pipeline2_webui.v }}"
-      c: "{{ pipeline2_webui.c }}"
-# local action
-- fetch_deb_from_maven:
-    group_id: "{{ item.g }}"
-    artifact_id: "{{ item.a }}"
-    version: "{{ item.v }}"
-    classifier: "{{ item.c }}"
-    dest: "debs/{{ item.name }}-{{ item.v }}.deb"
-  with_items: pipeline2_extra_modules
+- make_deb:
+    recipe: "{{ item }}"
+    dest: "{{ playbook_dir }}/debs/{{ item.name }}-{{ item.version }}.deb"
+  with_items: "{{ [pipeline2_engine, pipeline2_webui] + pipeline2_extra_modules }}"
 - copy:
-    src: "debs/{{ item }}"
+    src: "{{ playbook_dir }}/debs/{{ item.name }}-{{ item.version }}.deb"
     dest: /tmp/debs/
-  with_items:
-    - "engine-{{ pipeline2_engine.v }}.deb"
-    - "webui-{{ pipeline2_webui.v }}.deb"
-- copy:
-    src: "debs/{{ item.name }}-{{ item.v }}.deb"
-    dest: /tmp/debs/
-  with_items: pipeline2_extra_modules
+  with_items: "{{ [pipeline2_engine, pipeline2_webui] + pipeline2_extra_modules }}"
 # remove database
 - file:
     path: /var/opt/daisy-pipeline2

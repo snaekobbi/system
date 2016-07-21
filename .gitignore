@@ -1,5 +1,5 @@
 /ssh_config
 .DS_Store
 /.vagrant/
-/roles/test-server/files/debs/*.deb
+/debs/*.deb
 *.pyc
